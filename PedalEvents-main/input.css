@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+#side-menu {
+  z-index: 50 !important;
+  width: 4rem;
+  transition: width 0.4s;
+}
+
+#side-menu.open {
+  width: 16rem;
+}
+
+#container-items {
+  transition: all 0.4s;
+}
+
+#buscaAmigos {
+  z-index: -1;
+}
+
+#buscaAmigos.close {
+  width: 0%;
+  transition: width 0.5s;
+}
+
+#buscaAmigos.open {
+  transition: width 0.5s;
+  width: 24rem;
+}
+
+.content-close {
+  display: none;
+  transition: all 0.5s;
+}
+
+.content-open {
+  display: block;
+  transition: all 0.5s;
+}
+
+#notificacoes {
+  z-index: -1;
+}
+
+#home-banner {
+  z-index: -1;
+  background-image: url("../img/bg-header-desktop.png");
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.icon-faded {
+  opacity: 0.5;
+}
+
+.bgGradiente {
+  background: linear-gradient(to right, #003b7a, #006ce0);
+}
+
+.bgGradienteVertical {
+  background: linear-gradient(190deg, #003b7a, #006ce0);
+}
+
+.message {
+  min-width: 200px;
+  max-width: 33%;
+  width: auto;
+}
+
+.user {
+  background-color: white;
+}
+
+.me {
+  background-color: #006ce0;
+  color: #fff;
+}
+
+/* Estilizando o scroll para navegadores Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
