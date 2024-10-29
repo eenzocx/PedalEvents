@@ -15,176 +15,141 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap"
         rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Estilos para esconder o texto quando a navbar está fechada */
+        .navbar-item-text {
+            display: none;
+        }
+
+        /* Estilos para mostrar o texto apenas quando a navbar está aberta */
+        .navbar-open .navbar-item-text {
+            display: inline; /* Mostra o texto quando a navbar está aberta */
+        }
+
+        .navbar-open .navbar-item-icon {
+            display: inline; /* Mantenha o ícone visível */
+        }
+
+        .navbar-item-icon {
+            display: none; /* Esconde o ícone quando a navbar está fechada */
+        }
+
+        .navbar-closed .navbar-item-icon {
+            display: inline; /* Mostra o ícone quando a navbar está fechada */
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="relative">
         <div class="fixed top-0 left-0">
-            <nav id="side-menu" class="h-screen w-16 bgGradienteVertical py-4 close ">
-                <ul id class="h-full flex flex-col  text-white ">
-                    <div id="arrow-container" class="flex flex-col items-center  w-full px-4">
+            <nav id="side-menu" class="h-screen w-16 bgGradienteVertical py-4 navbar-closed">
+                <ul class="h-full flex flex-col text-white">
+                    <div id="arrow-container" class="flex flex-col items-center w-full px-4">
                         <div class="flex justify-end">
-                            <li  class="group group-duration-200 relative">
+                            <li class="group group-duration-200 relative">
                                 <i id="arrow" class="fa-solid fa-arrow-right cursor-pointer close"></i>
-                                <span id="tooltip" class="hidden arrow absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200 ">Abrir</span>
+                                <span id="tooltip" class="hidden arrow absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Abrir</span>
                             </li>
                         </div>
                         <h1 id="logo" class="hidden text-3xl font-russo mt-[4rem]"><span class="text-colorLogo">Pedal</span> Events</h1>
                     </div>
 
                     <div id="container-items" class="flex flex-col items-center p-4 space-y-10 mt-[4rem]">
-                        <li class="group group-duration-200 relative cursor-pointer icon-faded ">
+                        <li class="group group-duration-200 relative cursor-pointer icon-faded">
                             <a href="./index.html">
                                 <i class="fa-solid fa-house"></i>
                                 <span id="liSpans" class="hidden">Home</span>
                             </a>
-                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200 ">Home</span>
-                        </li> 
+                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Home</span>
+                        </li>
                         <li class="group relative cursor-pointer">
                             <a href="./eventos.html">
                                 <i class="fa-solid fa-flag"></i>
                                 <span id="liSpans" class="hidden">Eventos</span>
                             </a>
-                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200 ">Eventos</span>
-                        </li> 
+                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Eventos</span>
+                        </li>
 
                         <li id="liCriar" class="group relative cursor-pointer">
                             <a href="#">
                                 <i class="fa-solid fa-circle-plus"></i>
                                 <span id="liSpans" class="hidden">Criar</span>
                             </a>
-                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200 ">Criar</span>
-                            <!-- caixa do criar -->
+                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Criar</span>
+                            <!-- Caixa do criar -->
                             <div id="create" class="hidden absolute w-32 rounded-xl text-center left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D]">
                                 <ul>
                                     <div class="">
                                         <li class="p-2 duration-200 hover:opacity-80"><a href="">Criar Pedal</a></li>
                                     </div>
-                                    
                                 </ul>
                             </div>
-                        </li> 
+                        </li>
+
                         <li class="group relative cursor-pointer">
                             <a href="./perfil.html">
                                 <img id="perfilImg" class="w-[25px] h-[25px] md:w-[30px] md:h-[30px] inline" src="./assets/img/person-img.png" alt="">
                                 <span id="liSpans" class="hidden">Perfil</span>
                             </a>
-                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200 ">Perfil</span>
-                        </li> 
-                    </div>    
-                    
-                    <div id="containerMais" class="flex flex-col p-6 items-center  absolute bottom-0">
+                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Perfil</span>
+                        </li>
+                    </div>
+
+                    <!-- Ícone Premium em Posição Própria -->
+                    <div id="container-premium" class="flex flex-col items-center mt-4 p-4">
+                        <li class="group relative cursor-pointer">
+                            <a href="./premium.html" class="flex items-center">
+                                <i class="fa-solid fa-crown navbar-item-icon"></i>
+                                <span id="liSpans" class="navbar-item-text">Premium</span>
+                            </a>
+                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Premium</span>
+                        </li>
+                    </div>
+
+                    <div id="containerMais" class="flex flex-col p-6 items-center absolute bottom-0">
                         <li id="liMais" class="group relative cursor-pointer">
                             <a href="#">
                                 <i class="fa-solid fa-bars"></i>
                                 <span id="liSpans" class="hidden">Mais</span>
                             </a>
-                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200 ">Mais</span>
-                             <!-- caixa do criar -->
-                             <div id="mais" class="hidden absolute w-32 rounded-xl text-center left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D]">
+                            <span id="Tooltip" class="hidden absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D] text-white text-sm rounded-lg p-2 opacity-0 transition-opacity duration-200">Mais</span>
+                            <!-- Caixa do criar -->
+                            <div id="mais" class="hidden absolute w-32 rounded-xl text-center left-8 top-1/2 transform -translate-y-1/2 bg-[#16161D]">
                                 <ul>
-                                    <div class="border-b">
-                                        <li class="p-2 duration-200 hover:opacity-80"><a href="./login.html">Trocar Conta</a></li>
-                                    </div>
                                     <div>
                                         <li class="p-2 duration-200 hover:opacity-80"><a href="./login.html">Sair</a></li>
                                     </div>
                                 </ul>
                             </div>
-                        </li> 
-                    </div>     
-                </ul>
-                    <!-- caixa de busca de amigos -->
-                    <div id="buscaAmigos" class="close bg-[#0065B9] flex justify-center pt-8 absolute h-full top-0 left-[4rem] text-black overflow-y-auto">
-                        <div id="boxUsers" class="flex flex-col space-y-10 content-close">
-                            <form action="">
-                                <div class="w-full">
-                                    <input class="w-[22rem] p-2 rounded-lg outline-none" type="text" placeholder="Buscar amigos...">
-                                    <button type="reset" class="hidden">enviar</button>
-                                </div>
-                            </form>
-                            <div id="users" class="flex flex-col space-y-4 ">
-
-                                <div class="flex space-x-4 bg-[#003B7A] p-4 rounded-2xl text-white duration-200 hover:bg-opacity-80 cursor-pointer">
-                                    <img src="./assets/img/Rectangle 3509.png" alt="" class="w-[3.75rem] h-[3.75rem] rounded-[50%]">
-                                    <div>
-                                        <p class="text-xl font-medium">Felipe</p>
-                                        <p>Praticando todos os dias!</p>
-                                    </div>
-                                </div>
-                                <div class="w-[22rem] flex space-x-4  bg-[#003B7A] p-4 rounded-2xl text-white duration-200 hover:bg-opacity-80 cursor-pointer">
-                                    <img src="./assets/img/Rectangle 3513.png" alt="" class="w-[3.75rem] h-[3.75rem] rounded-[50%]">
-                                    <div>
-                                        <p class="text-xl font-medium">João</p>
-                                        <p>Gosto de pedalar</p>
-                                    </div>
-                                </div>
-                            </div>            
-                        </div>
+                        </li>
                     </div>
-                    <!-- caixa de notificação -->
-                    <nav id="notificacoes" class="hidden bg-[#0065B9] flex justify-center pt-8 absolute h-full w-[24rem] top-0 left-[4rem] text-black">
-                    </nav>
+                </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="home-banner" class="h-screen w-full">
-            <div class="h-full flex items-center justify-center">
-                <div class="flex flex-col items-center p-20 text-black">
-                    <h1 class="text-4xl text-center font-bold md:text-4xl font-roboto">Encontre o pedal perfeito para você!</h1>
-                    <p class="text-2xl text-center md:text-xl mt-4">Faça parte da nossa comunidade!
-                    </p>
-                    <div class="mt-8 flex space-x-8">
-                        <a href="./eventos.html"
-                            class="bg-[#003B7A] mt-6 text-white py-2 px-4 md:py-4 md:px-[4rem] rounded-lg duration-200 hover:opacity-80">Buscar
-                            Eventos</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-       
+        <!-- Conteúdo da página principal -->
     </main>
+
     <script src="./assets/js/menu.js"></script>
+    <script>
+        // Exemplo de script para alternar a classe da navbar ao abrir e fechar
+        const arrow = document.getElementById('arrow');
+        const sideMenu = document.getElementById('side-menu');
 
-
-    <footer>
-        <div class="container rodape">
-            <div class="row">
-              <div class="col text-center">
-                <img class="image1" src="image-removebg-preview.png" alt="">
-                <p class="emo">Nossa tecnologia visa um passeio​  seguro e unido​</p>
-              </div>
-              <div class="col">
-                <nav></nav>
-                  <h5 class="coloridao trojan">Redes Sociais</h5>
-                  <div class="link-chato2">
-                  <a class="naruto nav-link" href=""><img class="fotpng" src="./assets/img/instagram (1).png" alt=""> Instagram</a>
-                  <a class="naruto nav-link" href=""><img class="fotpng" src="./assets/img/facebook (1).png" alt=""> Facebook</a>
-                  <a class="naruto nav-link" href=""><img class="fotpng" src="./assets/img/github.png" alt=""> Github</a>
-                  </div>
-              </div>
-              <div class="col">
-                <nav>
-                  <div class="link-chato">
-                    <h5 class="coloridao trojan">Contato</h5>
-                    <a class="naruto nav-link">(13) 99676-7646</a>
-                    <a class="naruto nav-link">pedaleventsoficial@gmail.com</a>
-                    <a class="naruto nav-link" href="">Fale Conosco</a>
-                    <a class="naruto nav-link" href="">Perguntas Frequentes</a>
-                  </div>
-                </nav>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </footer>
-tem menu de contexto
+        arrow.addEventListener('click', () => {
+            sideMenu.classList.toggle('navbar-open');
+            sideMenu.classList.toggle('navbar-closed');
+        });
+    </script>
 </body>
 
 </html>
